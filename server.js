@@ -20,6 +20,9 @@ mongoose
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cors());
+  
+
+app.use(routes)
 
 app.use(helmet({
     contentSecurityPolicy: {
@@ -33,8 +36,6 @@ app.use(helmet({
       },
     },
   }));
-
-app.use(routes)
 
 app.listen( PORT, () => {
     console.log(`Working on PORT ${PORT}`)
